@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LancheTech</title>
+
+    <link rel="stylesheet" href="../css/style-relatorio.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="cabecalho">
+            <h1>RELATÓRIO</h1>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="relatorio">
+
+            <div class="cards">
+
+                <div class="card">
+                    <h2>📅</h2>
+                    <h3>Retiradas hoje</h3>
+                    <p id="retiradasHoje">0</p>
+                </div>
+
+                <div class="card">
+                    <h2>👥</h2>
+                    <h3>Alunos matriculados</h3>
+                    <p id="alunosMatriculados">0</p>
+                </div>
+
+                <div class="card">
+                    <h2>🕒</h2>
+                    <h3>Retiradas no turno atual</h3>
+                    <p id="retiradasTurnoAtual">0</p>
+                    <span id="nomeTurno"></span>
+                </div>
+
+                <div class="card">
+                    <h2>☀️</h2>
+                    <h3>Retiradas pela manhã</h3>
+                    <p id="retiradasManha">0</p>
+                </div>
+
+                <div class="card">
+                    <h2>🌤️</h2>
+                    <h3>Retiradas à tarde</h3>
+                    <p id="retiradasTarde">0</p>
+                </div>
+
+                <div class="card">
+                    <h2>🌙</h2>
+                    <h3>Retiradas à noite</h3>
+                    <p id="retiradasNoite">0</p>
+                </div>
+
+            </div>
+
+
+            <div class="data"> <!--Data do relatório-->
+                <h2>Relatório do dia: <span id="dataRelatorio"></span></h2>
+            </div>
+
+            <div class="voltar"> <!--Botão para voltar para o leitor-->
+                <a href="leitorCantina.html">← Voltar ao leitor</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../scripts/script-dadosAlunos.js"></script>
+    <script src="../scripts/script-relatorio.js"></script>
+
+</body>
+</html>

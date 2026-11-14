@@ -1,0 +1,165 @@
+* { /*Configurações gerais*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #253247;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+header {/*Cabeçalho*/
+    background: #174a83;
+    color: white;
+    padding: 28px 35px;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    font-size: clamp(25px, 4vw, 52px);
+    font-weight: bold;
+}
+
+.relatorio { /* ÁREA DO RELATÓRIO */
+    max-width: 1450px;
+    margin: auto;
+}
+
+.cards { /* Cards */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 24px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #dfe4eb;
+    border-left: 1px solid #dfe4eb;
+    border-radius: 9px;
+    min-height: 230px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+}
+
+.card h2 {
+    font-size: 65px;
+    margin-bottom: 5px;
+}
+
+.card h3 {
+    font-size: clamp(17px, 2vw, 28px);
+    font-weight: normal;
+    color: #071447;
+}
+
+.card p {
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: bold;
+    color: #174a83;
+    line-height: 1.1;
+    margin-top: 8px;
+}
+
+.card span {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.data { /* Data do relatório */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 35px 0 25px;
+    text-align: center;
+}
+
+.data h2 {
+    font-size: clamp(19px, 2.5vw, 32px);
+    white-space: nowrap;
+}
+
+.voltar { /*Botão voltar*/
+    display: flex;
+    justify-content: center;
+}
+
+.voltar a {
+    background: #174a83;
+    color: white;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-size: 22px;
+    transition: 0.2s;
+}
+
+.voltar a:hover {
+    background: #10365f;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 850px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cabecalho {
+        margin-left: 110px;
+        padding-left: 20px;
+    }
+
+    .cabecalho::before {
+        left: -110px;
+        width: 90px;
+        font-size: 55px;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 22px 15px;
+    }
+
+    .cabecalho {
+        margin-left: 0;
+        padding-left: 15px;
+    }
+
+    .cabecalho::before {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        min-height: 190px;
+    }
+
+    .data {
+        gap: 10px;
+    }
+
+    .voltar a {
+        font-size: 19px;
+        padding: 17px 25px;
+    }
+}

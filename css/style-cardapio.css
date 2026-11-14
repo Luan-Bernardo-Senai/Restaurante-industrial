@@ -1,0 +1,167 @@
+:root {
+  --azul-escuro: #1a1670;
+  --azul-principal: #185ca9;
+  --azul-botao: #454cb3;
+  --azul-claro: #D2DDED;
+  --fundo-pagina: #edf3f8;
+  --texto: #2b2f4a;
+  --branco: #ffffff;
+}
+
+* { /*Base*/
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0 24px;
+  background-color: var(--fundo-pagina);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+h1 { /*  Título  */
+  margin: 28px 0 8px;
+  text-align: center;
+  color: var(--azul-principal);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: 1px;
+}
+
+.buttons2 { /*Botões Retirar e Sair*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  max-width: 1100px;
+  margin: 16px auto;
+}
+
+.buttons2 a {
+  display: inline-block;
+  padding: 10px 28px;
+  background-color: var(--azul-botao);
+  color: var(--branco);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.buttons2 a:hover {
+  background-color: var(--azul-escuro);
+  transform: translateY(-2px);
+}
+
+/*Tabela*/
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate; /* necessário para bordas arredondadas */
+  border-spacing: 0;
+  margin: 16px 0 32px;
+  background-color: var(--branco);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: center;
+  border-bottom: 1px solid #dbe3f0;
+}
+
+/*Cabeçalho da tabela*/
+th {
+  background-color: var(--azul-principal);
+  color: var(--branco);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/*Coluna de horário em destaque*/
+td:first-child {
+  background-color: var(--azul-claro);
+  color: var(--azul-principal);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Linhas alternadas para facilitar a leitura */
+tbody tr:nth-child(even) td:not(:first-child) {
+  background-color: #f5f8fc;
+}
+
+/* Efeito ao passar o mouse (texto continua legível) */
+tbody tr:hover td {
+  background-color: #dce8f7;
+}
+
+tbody tr:hover td:first-child {
+  background-color: #bfd1ea;
+}
+
+/* Remove a linha da última linha da tabela */
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/*  Separadores entre os turnos (linhas vazias)  */
+tbody tr.espaco1 td,
+tbody tr.espaco2 td,
+tbody tr.espaco1:hover td,
+tbody tr.espaco2:hover td {
+  height: 10px;
+  padding: 0;
+  background-color: var(--azul-botao) !important; /* vence as regras de zebra e hover */
+  border-bottom: none;
+}
+
+/*Rodapé*/
+footer {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 14px;
+  background: linear-gradient(to left, rgb(52, 50, 187), rgb(28, 26, 141), rgb(34, 22, 87));
+  color: var(--branco);
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/*  Celular / telas pequenas  */
+@media (max-width: 768px) {
+  body {
+    padding: 0 12px;
+  }
+
+  /* tabela rola na horizontal em vez de quebrar o layout */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .buttons2 a {
+    padding: 10px 20px;
+  }
+}
